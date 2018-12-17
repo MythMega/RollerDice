@@ -23,7 +23,7 @@ public class Partie {
     private boolean verifierValidite() {
         if (_lesLancers.size() < 10) { return true; }
         else {return false;}
-    }
+    } 
 
     private void set_Point()
     {
