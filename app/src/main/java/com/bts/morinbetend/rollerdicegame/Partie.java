@@ -26,7 +26,7 @@ public class Partie implements Serializable {
         else {return false;}
     }
 
-    private void set_Point()
+    public void set_Point()
     {
         int resultat = 0;
         for(Lancer monLancer : _lesLancers)
@@ -38,6 +38,7 @@ public class Partie implements Serializable {
     public void set_playerName(String unNom) {_playerName = unNom;}
     public int get_point() {return _point;}
     public ArrayList<Lancer> get_lesLancers(){return _lesLancers;}
-
-    public String VersChaine() {return _playerName + "  ->  " + _point; }
+    public String get_playerName() {return _playerName;}
+    @Override
+    public String toString() {return _playerName + "  ->  " + _point;}
 }

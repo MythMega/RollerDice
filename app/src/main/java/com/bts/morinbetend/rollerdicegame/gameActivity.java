@@ -50,11 +50,16 @@ public class gameActivity extends AppCompatActivity {
                     }
                     _partie = new Partie(numPartie, etNom.toString());
                 }
+
+
                 Lancer unLancer = new Lancer(_tour);
                 _tour++;
                 unLancer.LancerDes();
-                tvScoreLancer.setText("Dés 1 : " + unLancer.get_desUn() + " - Dés 2 : " + unLancer.get_desDeux());
-                tvScoreTotalLancer.setText(_partie.get_point());
+                tvScoreLancer.setText("Dés 1 : " + unLancer.get_desUn() + "      -      Dés 2 : " + unLancer.get_desDeux());
+                _partie.set_Point();
+                int lesPointInt = _partie.get_point();
+                String lesPoints = String.valueOf(lesPointInt);
+                tvScoreTotalLancer.setText(lesPoints);
 
                 if(_tour == 11) {
                     _tour = 0;
