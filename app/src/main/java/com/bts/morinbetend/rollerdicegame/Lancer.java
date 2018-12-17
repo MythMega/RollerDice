@@ -18,7 +18,7 @@ public class Lancer {
     public void LancerDes() {
         _desUn = Calcul.GenererLancerDes();
         _desDeux = Calcul.GenererLancerDes();
-        _resultatDes = _desUn + _desDeux;
+        if((_desUn + _desDeux) == 7 ) {_resultatDes = 10; } else {_resultatDes = 0 ;}
     }
 
     public int get_desUn(){return _desUn;}

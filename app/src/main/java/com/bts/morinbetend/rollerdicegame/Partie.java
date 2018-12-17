@@ -6,10 +6,12 @@ public class Partie {
     private int _numero;
     private int _point;
     private ArrayList<Lancer> _lesLancers = new ArrayList<Lancer>();
+    private String _playerName;
 
-    public Partie(int unNumero)
+    public Partie(int unNumero, String unNom)
     {
         _numero = unNumero;
+        _playerName = unNom;
     }
 
     public void ajouterLancers(Lancer unLancer)
@@ -32,6 +34,7 @@ public class Partie {
         }
     }
 
+    private void set_playerName(String unNom) {_playerName = unNom;}
     private int get_point() {return _point;}
     private ArrayList<Lancer> get_lesLancers(){return _lesLancers;}
 }
