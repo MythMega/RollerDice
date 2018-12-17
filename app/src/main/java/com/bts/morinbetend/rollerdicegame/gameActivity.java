@@ -1,6 +1,9 @@
 package com.bts.morinbetend.rollerdicegame;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +18,7 @@ public class gameActivity extends AppCompatActivity {
     private Button btnLancer, btnRetour, btnStop;
     private TextView tvLancersRestants, tvScoreTotalLancer, tvScoreLancer;
     private EditText etNom;
+
     private int _tour;
 
     @Override
@@ -22,11 +26,27 @@ public class gameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         initializeIHM();
+        _tour = 0 ;
+        final AlertDialog alertDialog = new AlertDialog.Builder(gameActivity.this).create();
+        alertDialog.setTitle("Alert");
+        alertDialog.setMessage("Entrez Votre Nom");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
         btnLancer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(etNom != "") {
+                if(_tour == 0)
+                {
+                    if(etNom.toString() != "") {
+                        alertDialog.show();
+                        return;
+                    }
                 }
+
 
             }
         });

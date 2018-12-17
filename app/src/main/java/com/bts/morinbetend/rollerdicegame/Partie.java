@@ -23,7 +23,7 @@ public class Partie {
     private boolean verifierValidite() {
         if (_lesLancers.size() < 10) { return true; }
         else {return false;}
-    } 
+    }
 
     private void set_Point()
     {
@@ -37,4 +37,5 @@ public class Partie {
     private void set_playerName(String unNom) {_playerName = unNom;}
     private int get_point() {return _point;}
     private ArrayList<Lancer> get_lesLancers(){return _lesLancers;}
+    private String VersChaine() {return _playerName + "  ->  " + _point; }
 }
