@@ -28,23 +28,26 @@
     <ListView
         android:id="@+id/lv_lancer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
-
+        android:layout_height="300dp"></ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
     <Button
         android:id="@+id/btn_retour"
-        android:text="Créer un nouveau patient"
-        android:layout_width="match_parent"
+        android:text="RETOUR"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginLeft="20dp"/>
     <Button
-        android:id="@+id/btn_score"
-        android:text="Créer un nouveau patient"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_stop"
+        android:text="STOP"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
-
+    </LinearLayout>
 </LinearLayout>
