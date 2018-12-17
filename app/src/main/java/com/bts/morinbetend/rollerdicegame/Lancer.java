@@ -24,4 +24,5 @@ public class Lancer {
     public int get_desUn(){return _desUn;}
     public int get_desDeux(){return _desDeux;}
     public int get_resultatDes() {return _resultatDes;}
+    public int get_numero() {return _numero;}
 }
