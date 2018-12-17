@@ -45,7 +45,9 @@ public class gameActivity extends AppCompatActivity {
                         alertDialog.show();
                         return;
                     }
+                    _partie = new Partie()
                 }
+
 
 
             }
