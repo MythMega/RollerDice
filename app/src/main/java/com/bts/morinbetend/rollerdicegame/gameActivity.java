@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.Serializable;
+
 public class gameActivity extends AppCompatActivity {
 
     private Partie _partie;
@@ -20,6 +22,7 @@ public class gameActivity extends AppCompatActivity {
     private EditText etNom;
 
     private int _tour;
+    private int numPartie = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,7 @@ public class gameActivity extends AppCompatActivity {
         initializeIHM();
         _tour = 0 ;
         final AlertDialog alertDialog = new AlertDialog.Builder(gameActivity.this).create();
-        alertDialog.setTitle("Alert");
+        alertDialog.setTitle("Erreur");
         alertDialog.setMessage("Entrez Votre Nom");
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
@@ -41,14 +44,24 @@ public class gameActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(_tour == 0)
                 {
-                    if(etNom.toString() != "") {
+                    if(etNom.toString() == "") {
                         alertDialog.show();
                         return;
                     }
-                    _partie = new Partie()
+                    _partie = new Partie(numPartie, etNom.toString());
                 }
+                Lancer unLancer = new Lancer(_tour);
+                _tour++;
+                unLancer.LancerDes();
+                tvScoreLancer.setText("Dés 1 : " + unLancer.get_desUn() + " - Dés 2 : " + unLancer.get_desDeux());
+                tvScoreTotalLancer.setText(_partie.get_point());
 
-
+                if(_tour == 11) {
+                    _tour = 0;
+                    Intent myIntent = new Intent(getApplicationContext(), ScoreActivity.class);
+                    myIntent.putExtra("partie", _partie);
+                    startActivity(myIntent);
+                }
 
             }
         });

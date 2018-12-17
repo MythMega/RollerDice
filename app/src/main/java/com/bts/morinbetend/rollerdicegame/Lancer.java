@@ -1,9 +1,10 @@
 package com.bts.morinbetend.rollerdicegame;
 
+import java.io.Serializable;
 import java.util.Random;
 import com.bts.morinbetend.rollerdicegame.Calcul;
 
-public class Lancer {
+public class Lancer implements Serializable {
     private  int _numero;
     private int _desUn;
     private int _desDeux;
@@ -13,6 +14,11 @@ public class Lancer {
         this._numero = unNumeroId;
         this._desUn = unNumeroDesUn;
         this._desDeux = unNumeroDesDeux;
+    }
+
+    public Lancer(int unNumeroId)
+    {
+        this._numero = unNumeroId;
     }
 
     public void LancerDes() {

@@ -1,8 +1,9 @@
 package com.bts.morinbetend.rollerdicegame;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Partie {
+public class Partie implements Serializable {
     private int _numero;
     private int _point;
     private ArrayList<Lancer> _lesLancers = new ArrayList<Lancer>();
@@ -34,9 +35,9 @@ public class Partie {
         }
     }
 
-    private void set_playerName(String unNom) {_playerName = unNom;}
-    private int get_point() {return _point;}
-    private ArrayList<Lancer> get_lesLancers(){return _lesLancers;}
+    public void set_playerName(String unNom) {_playerName = unNom;}
+    public int get_point() {return _point;}
+    public ArrayList<Lancer> get_lesLancers(){return _lesLancers;}
 
     public String VersChaine() {return _playerName + "  ->  " + _point; }
 }
